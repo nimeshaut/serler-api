@@ -17,6 +17,9 @@ const usersRoute = require('../routes/users');
 const rolesRoute = require('../routes/roles');
 const gendersRoute = require('../routes/genders');
 const authRoute = require('../routes/auth');
+const searchFieldRoute = require('../routes/searchFields');
+const articlesRoute = require('../routes/articles');
+const statusesRoute = require('../routes/statuses');
 
 
 
@@ -58,5 +61,8 @@ app.use('/api/genders', gendersRoute);
 app.use('/api/users', usersRoute);
 app.use('/api/roles', rolesRoute);
 app.use('/api/auth', authRoute);
+app.use('/api/searchfields', searchFieldRoute);
+app.use('/api/articles', articlesRoute);
+app.use('/api/statuses', statusesRoute);
 
 app.listen(process.env.PORT || 8080);
