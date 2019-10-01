@@ -1,0 +1,6 @@
+{
+    "name": "SerlerApi",
+    "description": "Backend API for Serler - A project by Group 5",
+    "repository": "https://github.com/SERLER-group5/serler-backend",
+    "keywords": ["node", "express", "static"]
+}

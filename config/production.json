@@ -1,0 +1,8 @@
+{
+    "name": "SERLER - Production",
+    "mail":{
+        "host":"prod-mail.server"
+    },
+    
+    "mongoDbConnection": "mongodb+srv://assignment2:group5@cluster0-qa9mw.mongodb.net/Serler"
+}
