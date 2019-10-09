@@ -20,6 +20,7 @@ const authRoute = require('../routes/auth');
 const searchFieldRoute = require('../routes/searchFields');
 const articlesRoute = require('../routes/articles');
 const statusesRoute = require('../routes/statuses');
+const searchRoute = require('../routes/searches');
 
 
 
@@ -64,5 +65,7 @@ app.use('/api/auth', authRoute);
 app.use('/api/searchfields', searchFieldRoute);
 app.use('/api/articles', articlesRoute);
 app.use('/api/statuses', statusesRoute);
+app.use('/api/search', searchRoute);
+//app.use('/api/searches', searchesRoute);
 
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8081);
