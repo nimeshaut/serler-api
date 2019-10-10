@@ -68,4 +68,4 @@ app.use('/api/statuses', statusesRoute);
 app.use('/api/search', searchRoute);
 //app.use('/api/searches', searchesRoute);
 
-app.listen(process.env.PORT || 8081);
+app.listen(process.env.PORT || 8080);
