@@ -63,7 +63,7 @@ app.use('/api/users', usersRoute);
 app.use('/api/roles', rolesRoute);
 app.use('/api/auth', authRoute);
 app.use('/api/searchfields', searchFieldRoute);
-app.use('/api/articles', articlesRoute);
+app.use('/paper', articlesRoute);
 app.use('/api/statuses', statusesRoute);
 app.use('/api/search', searchRoute);
 //app.use('/api/searches', searchesRoute);
