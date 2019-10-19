@@ -1,8 +1,0 @@
-{
-    "name": "SERLER - Development",
-    "mail":{
-        "host":"dev-mail.server"
-    },
-    "mongoDbConnection": "mongodb://localhost/SERLER",
-    "jwtPrivateKey": "mySuperJWTKey"
-}

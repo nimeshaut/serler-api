@@ -8,13 +8,11 @@ router.post("/", async (req, res) => {
   //   console.log(req.body.queries[0].search);
   //   console.log(req.body.queries[0].search.field);
   const query = buildQuery(req.body.queries);
-//   console.log("displaying query now");
-   console.log("sending from query");
-  const articles = await Article
-    .find()
-    .or(query);
-    //.or([{name:/first article/i},{tags:/three/i, authors:/nimesh trivedi/i}])
-    //.or([{ authors: "Nimesh Trivedi" }]);
+  //   console.log("displaying query now");
+  console.log("sending from query");
+  const articles = await Article.find().or(query);
+  //.or([{name:/first article/i},{tags:/three/i, authors:/nimesh trivedi/i}])
+  //.or([{ authors: "Nimesh Trivedi" }]);
   //console.log(articles);
   res.send(articles);
 });
@@ -31,35 +29,38 @@ function buildQuery(queries) {
   //nin (not in)
   console.log(queries);
   let queryBuilder = {};
-  let andOperator ={};
+  let andOperator = {};
   let orOperator = [];
   queryBuilder.query = [];
   queries.forEach(query => {
     search = query.search;
     let jsonObj = {};
-    
-    if(query.combineUsing === 'or'){
-        orOperator.push(andOperator);
-        andOperator = {}
+
+    if (query.combineUsing === "or") {
+      orOperator.push(andOperator);
+      andOperator = {};
     }
 
-    let searchExp =  new RegExp(`${search.operand}`, 'i');
+    let searchExp = new RegExp(`${search.operand}`, "i");
 
-    if (search.operation === "beginsWith") searchExp =  new RegExp(`^${search.operand}`, 'i');
-    if (search.operation === "endsWith") searchExp = new RegExp(`${search.operand}$`, 'i');//`/search.operand$/i`;
-    if (search.operation === "contains") searchExp = new RegExp(`.*${search.operand}.*`, 'i');// `/.*search.operand.*/i`;
+    if (search.operation === "beginsWith")
+      searchExp = new RegExp(`^${search.operand}`, "i");
+    if (search.operation === "endsWith")
+      searchExp = new RegExp(`${search.operand}$`, "i"); //`/search.operand$/i`;
+    if (search.operation === "contains")
+      searchExp = new RegExp(`.*${search.operand}.*`, "i"); // `/.*search.operand.*/i`;
     if (search.field === "Article title") {
       andOperator["name"] = searchExp;
     }
     if (search.field === "Author") {
-        andOperator["authors"] = searchExp;
+      andOperator["authors"] = searchExp;
     }
     if (search.field === "Tag") {
-        andOperator["tags"] = searchExp;
+      andOperator["tags"] = searchExp;
     }
-    
+
     //queryBuilder.query.push(jsonObj);
-    
+
     // console.log(jsonObj);
     //console.log(query);
   });
