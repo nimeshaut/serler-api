@@ -17,10 +17,8 @@ const usersRoute = require('../routes/users');
 const rolesRoute = require('../routes/roles');
 const gendersRoute = require('../routes/genders');
 const authRoute = require('../routes/auth');
-const searchFieldRoute = require('../routes/searchFields');
-const articlesRoute = require('../routes/articles');
-const statusesRoute = require('../routes/statuses');
-const searchRoute = require('../routes/searches');
+const statusRoute = require('../routes/status');
+const articlesRoute = require('../routes/article');
 
 
 
@@ -33,8 +31,7 @@ if (!config.get('mongoDbConnection')) {
   process.exit(1);
 }
 
-console.log(config.get('mongoDbConnection'));
-
+console.log('mongo connection: ', config.get('mongoDbConnection'));
 mongoose.connect(config.get('mongoDbConnection'), {
     useNewUrlParser: true,
     useFindAndModify: false,
@@ -42,7 +39,7 @@ mongoose.connect(config.get('mongoDbConnection'), {
     useUnifiedTopology: true
   })
   .then(() => console.log('Connected to MongoDB Atlas'))
-  .catch(err => console.error('Could not connect to MongoDB Atlas - what is this nimesh ???'));
+  .catch(err => console.error('Could not connect to MongoDB Atlas'));
 
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -62,10 +59,7 @@ app.use('/api/genders', gendersRoute);
 app.use('/api/users', usersRoute);
 app.use('/api/roles', rolesRoute);
 app.use('/api/auth', authRoute);
-app.use('/api/searchfields', searchFieldRoute);
-app.use('/paper', articlesRoute);
-app.use('/api/statuses', statusesRoute);
-app.use('/api/search', searchRoute);
-//app.use('/api/searches', searchesRoute);
+app.use('/api/status', statusRoute);
+app.use('/api/articles', articlesRoute);
 
-app.listen(process.env.PORT || 8080);
+app.listen(8080);

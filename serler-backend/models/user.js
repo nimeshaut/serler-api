@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
 
 function validateUser(user){
     const schema = {
-        name: Joi.string().min(5).required(),
+        name: Joi.string().min(3).required(),
         password: Joi.string().min(8).max(255).required(),
         email: Joi.string().min(5).max(255).required().email(),
         genderId: Joi.objectId().required(),
@@ -27,7 +27,7 @@ function validateUser(user){
 }
 function validateUserEdit(user){
     const schema = {
-        name: Joi.string().min(5).required(),
+        name: Joi.string().min(3).required(),
         genderId: Joi.objectId().required(),
         roleId: Joi.objectId().required(),
         age: Joi.number()
