@@ -24,14 +24,22 @@ const rejectorSchema = new mongoose.Schema({
 });
 
 const articleSchema = new mongoose.Schema({
-    name: {type:String, required:true, trim:true, minlength:5, maxlength:255},
-    submitter: {type:submitterSchema, required:true},
-    tags: [ {type:String, trim:true, minlength:2, maxlength:255} ],
-    status: {type: statusSchema},
-    moderator: {type: moderatorSchema},
-    analyst: {type: analystSchema},
-    rejector: {type: rejectorSchema},
-    noOfLikes: {type:Number,required:true, default:0, min:0}
+    papertitle: { type: String, required: true, trim: true, minlength: 5, maxlength: 255 },
+    authors: [{ type: String, required: true }],
+    year: { type: Number, required: true  },
+    source: { type: String, required: true },
+    publisher: { type: String },
+    number: { type: Number},
+    pages: { type: String},
+    link: { type: String, required: true },
+    submitter: { type: submitterSchema, required: false},
+    tags: [{ type: String, required: false, trim: true, minlength: 2, maxlength: 255 }],
+    status: { type: statusSchema, required: false },
+    moderator: { type: moderatorSchema, required: false  },
+    analyst: { type: analystSchema, required: false  },
+    rejector: { type: rejectorSchema, required: false  },
+    noOfLikes: { type: Number, required: false, default: 0, min: 0 }
+    
 });
 
 function validateArticle(article){

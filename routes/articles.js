@@ -6,6 +6,18 @@ const { User } = require("../models/user");
 const { Status } = require("../models/status");
 const auth = require("../middleware/authenticator");
 
+router.post('/addmanual', async(req, res)=>{
+  const article = new Article(req.body);
+  article.save()
+  .then(article => {
+    res.json('article added');
+  })
+  .catch(err => {
+    console.log(err)
+    res.json(err);
+    });
+});
+
 router.get("/", async (_req, res) => {
   const articles = await Article.find();
   res.send(articles);
