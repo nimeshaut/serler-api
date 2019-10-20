@@ -2,32 +2,25 @@
   "name": "serlerapi",
   "version": "1.0.0",
   "description": "Backend for serler app",
-  "main": "index.js",
+  "main": "buildScripts/srcServer.js",
   "scripts": {
-<<<<<<< Updated upstream
     "start": "node buildScripts/srcServer.js",
-    "test": "mocha \"test/**/*.test.js\"",
-    "test:reporter": "mocha --recursive --reporter mochawesome --require babel-core/register \"test/**/*.test.js\"",
-=======
-    "start": "nodemon buildScripts/srcServer.js",
     "test": "mocha --reporter progress buildScripts/mochaSetup.js \"controllers/**/*.spec.js\"",
->>>>>>> Stashed changes
     "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SERLER-group5/serler-backend.git"
+    "url": "https://github.com/nimeshaut/serler-api.git"
   },
   "author": "group5 team",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SERLER-group5/serler-backend/issues"
+    "url": "https://github.com/nimeshaut/serler-api.git/issues"
   },
-  "homepage": "https://github.com/SERLER-group5/serler-backend#readme",
+  "homepage": "https://github.com/nimeshaut/serler-api.git#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.2.0",
-    "mochawesome": "^4.1.0"
+    "mocha": "^6.2.0"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
@@ -43,12 +36,8 @@
     "joi-password-complexity": "^3.1.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
-    "moment": "^2.24.0",
     "mongoose": "^5.7.1",
     "morgan": "^1.9.1",
-    "nodemon": "^1.19.2",
-    "mocha": "3.0.2",
-    "supertest": "3.0.0",
-    "chai": "4.1.2"
+    "nodemon": "^1.19.2"
   }
 }
