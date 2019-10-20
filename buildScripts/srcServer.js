@@ -21,6 +21,7 @@ const searchFieldRoute = require('../routes/searchFields');
 const articlesRoute = require('../routes/articles');
 const statusesRoute = require('../routes/statuses');
 const searchRoute = require('../routes/searches');
+const researchMethodsRoute = require('../routes/researchMethods');
 
 
 
@@ -66,6 +67,7 @@ app.use('/api/searchfields', searchFieldRoute);
 app.use('/paper', articlesRoute);
 app.use('/api/statuses', statusesRoute);
 app.use('/api/search', searchRoute);
+app.use('/api/researchmethods', researchMethodsRoute);
 //app.use('/api/searches', searchesRoute);
 
 app.listen(process.env.PORT || 8080);
