@@ -22,6 +22,8 @@ const articlesRoute = require('../routes/articles');
 const statusesRoute = require('../routes/statuses');
 const searchRoute = require('../routes/searches');
 const researchMethodsRoute = require('../routes/researchMethods');
+const participantRoute = require('../routes/researchParticipants');
+const methodologyRoute = require('../routes/taskMethodologies');
 
 
 
@@ -68,6 +70,8 @@ app.use('/paper', articlesRoute);
 app.use('/api/statuses', statusesRoute);
 app.use('/api/search', searchRoute);
 app.use('/api/researchmethods', researchMethodsRoute);
+app.use('/api/participants', participantRoute);
+app.use('/api/methodologies', methodologyRoute);
 //app.use('/api/searches', searchesRoute);
 
 app.listen(process.env.PORT || 8080);
