@@ -20,7 +20,7 @@
   "homepage": "https://github.com/nimeshaut/serler-api.git#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.2.0"
+    "mocha": "^10.2.0"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
